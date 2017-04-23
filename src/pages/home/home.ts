@@ -36,8 +36,8 @@ export class HomePage {
 //      })
 //    }
      if (val && val.trim() != '') {
-       this.http.get('https://www.reddit.com/r/gifs/new/.json?limit=10').map(res => res.json()).subscribe(data => {
-        this.items = data.data.children;
+       this.http.get('http://localhost:8080/query?query=' + val).map(res => res.json()).subscribe(data => {
+        this.items = data;
     });
      }
   }
